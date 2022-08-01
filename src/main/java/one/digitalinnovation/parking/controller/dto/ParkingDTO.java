@@ -9,21 +9,15 @@ import java.time.LocalDateTime;
 public class ParkingDTO {
 
     private String id;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private LocalDateTime entryDate;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private LocalDateTime exitDate;
+    private Double bill;
     private String licence;
     private String state;
     private String model;
     private String color;
-    private LocalDateTime entryDate;
-    private LocalDateTime exitDate;
-    private Double bill;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getLicence() {
         return licence;
@@ -55,6 +49,14 @@ public class ParkingDTO {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public LocalDateTime getEntryDate() {
